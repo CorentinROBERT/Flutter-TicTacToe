@@ -13,6 +13,7 @@ class GameView extends StatefulWidget{
 class GameViewState extends State<GameView>{
 
   GameController controller = GameController();
+   GlobalKey<GridGameState> gridGameKey = GlobalKey();
 
   @override
   void initState() {
@@ -39,7 +40,7 @@ class GameViewState extends State<GameView>{
         //player header.
         PlayerHeader(controller: controller,),
         //grid
-        GridGame(controller: controller),
+        GridGame(key: gridGameKey, controller: controller),
         //player gamer info
         PlayerGameInfo(controller : controller),
         //new game button
@@ -71,10 +72,15 @@ class GameViewState extends State<GameView>{
   }
   
   newGame() {
-    controller.newGame();
+    setState(() {
+      controller.newGame();
+      gridGameKey.currentState?.reset();
+    });
   }
   
   resetHistory() {
-    
+    setState(() {
+      controller.resetHistory();
+    });
   }
 }

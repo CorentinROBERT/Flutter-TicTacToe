@@ -28,7 +28,8 @@ class PlayerGameInfoState extends State<PlayerGameInfo>{
           widget.controller.state == "play" ? 
           Text(widget.controller.currentPlayer.value.isPlayer1 ? "Player1 : Your turn":"Player2 : your turn")
           : widget.controller.state == "winner" ? 
-          Text("Congratulation ${widget.controller.lastWinner?.name??""}, you win!",style: const TextStyle(color: Colors.red)) : 
+          Text("Congratulation ${widget.controller.lastWinner?.name??""}, you win!",style: const TextStyle(color: Colors.red)) 
+          : 
           const Text("No winner on this game",style: TextStyle(color: Colors.blue),)
           ],
         );

@@ -220,48 +220,50 @@ class GridGameState extends State<GridGame>{
       [case10, case11, case12],
       [case20, case21, case22]
     ];
-
     // Check horizontal lines
     for (int row = 0; row < 3; row++) {
       if (board[row][0] == board[row][1] && board[row][1] == board[row][2] && board[row][0] != null) {
         print(board[row][0]);
         defineWinner(board[row][0]!);
+        return;
       }
     }
-
     // Check vertical lines
     for (int col = 0; col < 3; col++) {
       if (board[0][col] == board[1][col] && board[1][col] == board[2][col] && board[0][col] != null) {
         print(board[0][col]);  
         defineWinner(board[0][col]!);
+        return;
       }
     }
-
     // Check diagonal lines
     if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != null) {
       print(board[0][0]);  
       defineWinner(board[0][0]!);
+      return;
     }
     if (board[2][0] == board[1][1] && board[1][1] == board[0][2] && board[2][0] != null) {
       print(board[2][0]);  
       defineWinner(board[2][0]!);
+      return;
     }
-    if(widget.controller.numberMovePlay == 9)
+    if(widget.controller.numberMovePlay == 8 && widget.controller.lastWinner == null)
     {
-      widget.controller.state="equality";
+      widget.controller.state = "equality";
     }
   }
 
   reset()
   {
-    List<bool?> board = [
-      case00, case01, case02,
-      case10, case11, case12,
-      case20, case21, case22
-    ];
-    for (var value in board) {
-      value=null;
-    }
+    case00 = null;
+    case01 = null;
+    case02 = null;
+    case10 = null;
+    case11 = null;
+    case12 = null;
+    case20 = null;
+    case21 = null;
+    case22 = null;
   }
   
   void defineWinner(bool value) {
