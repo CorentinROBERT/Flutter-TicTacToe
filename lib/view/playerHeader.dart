@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_interview/controller/gameController.dart';
+import 'package:mobile_app_interview/controller/game_state.dart';
 import 'package:mobile_app_interview/model/player.dart';
 
 class PlayerHeader extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => PlayerHeaderState();
 
-  PlayerHeader({super.key, required this.controller});
+  PlayerHeader({super.key, required this.state});
 
-  final GameController controller;
+  //final GameController controller;
+  final GameState state;
 }
 
 class PlayerHeaderState extends State<PlayerHeader> {
@@ -17,16 +19,13 @@ class PlayerHeaderState extends State<PlayerHeader> {
     var size = MediaQuery.of(context).size;
     return SizedBox(
       height: size.height/14,
-      child: ValueListenableBuilder<Player>(
-        valueListenable: widget.controller.currentPlayer,
-        builder: (context, currentPlayer, child) {
-          return Row(
+      child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
               Expanded(
                 child: Container(
-                  color: currentPlayer.isPlayer1 ? Colors.grey.shade400 : Colors.transparent,
+                  color: widget.state.currentPlayer.isPlayer1 ? Colors.grey.shade400 : Colors.transparent,
                   child: Padding(
                     padding: const EdgeInsets.all(10),
                     child: Row(
@@ -34,13 +33,13 @@ class PlayerHeaderState extends State<PlayerHeader> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        widget.controller.player1.icon,
+                        widget.state.player1.icon,
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(widget.controller.player1.name),
-                            Text(widget.controller.player1.score.toString()),
+                            Text(widget.state.player1.name),
+                            Text(widget.state.player1.score.toString()),
                           ],
                         ),
                       ],
@@ -50,7 +49,7 @@ class PlayerHeaderState extends State<PlayerHeader> {
               ),
               Expanded(
                 child: Container(
-                  color: !currentPlayer.isPlayer1 ? Colors.grey.shade400 : Colors.transparent,
+                  color: !widget.state.currentPlayer.isPlayer1 ? Colors.grey.shade400 : Colors.transparent,
                   child: Padding(
                     padding: const EdgeInsets.all(10),
                     child: Row(
@@ -58,13 +57,13 @@ class PlayerHeaderState extends State<PlayerHeader> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        widget.controller.player2.icon,
+                        widget.state.player2.icon,
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(widget.controller.player2.name),
-                            Text(widget.controller.player2.score.toString()),
+                            Text(widget.state.player2.name),
+                            Text(widget.state.player2.score.toString()),
                           ],
                         ),
                       ],
@@ -73,9 +72,8 @@ class PlayerHeaderState extends State<PlayerHeader> {
                 ),
               ),
             ],
-          );
-        },
-      ),
+          ),
     );
-  }
+    
+        }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:mobile_app_interview/controller/game_bloc.dart';
 import 'package:mobile_app_interview/src/main_view.dart';
 
 /// The Widget that configures your application.
@@ -88,7 +90,10 @@ class MyApp extends StatelessWidget {
           builder: (BuildContext context) {
             switch (routeSettings.name) {
               default:
-                return MainView();
+                return BlocProvider(
+                  create: (_) => GameBloc(),
+                  child: const MainView()
+                );
             }
           },
         );
