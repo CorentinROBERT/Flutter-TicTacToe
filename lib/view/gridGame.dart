@@ -61,7 +61,7 @@ class GridGameState extends State<GridGame>{
                 height: size.height/7,
                 width: size.height/7,
                 color: Colors.white,
-                child: case00!=null ? (case00! ? widget.controller.player1.icon: widget.controller.player2.icon) : null)
+                child: case00!=null ? (case00! ? widget.controller.player1.icon : widget.controller.player2.icon) : null)
               ),
               GestureDetector(onTap: () {
                 print("case01");

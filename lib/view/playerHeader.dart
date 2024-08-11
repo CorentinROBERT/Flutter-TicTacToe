@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mobile_app_interview/controller/gameController.dart';
 import 'package:mobile_app_interview/model/player.dart';
 
@@ -15,8 +14,9 @@ class PlayerHeader extends StatefulWidget {
 class PlayerHeaderState extends State<PlayerHeader> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return SizedBox(
-      height: 60,
+      height: size.height/14,
       child: ValueListenableBuilder<Player>(
         valueListenable: widget.controller.currentPlayer,
         builder: (context, currentPlayer, child) {

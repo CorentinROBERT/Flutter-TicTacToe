@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:mobile_app_interview/controller/gameController.dart';
 import 'package:mobile_app_interview/view/gridGame.dart';
 import 'package:mobile_app_interview/view/playerHeader.dart';
@@ -29,8 +29,9 @@ class GameViewState extends State<GameView>{
       //need to create style for title
       //need to use translate for title
       //need to create widget for title
-      appBar: AppBar(title: const Text(
-        "Tic Tac Toe",
+      appBar: AppBar(title: Text(
+        AppLocalizations.of(context)!.tictactoe,
+        //"Tic Tac Toe",
         style: TextStyle(color: Colors.white)
         ,),
         centerTitle: true,
@@ -55,7 +56,7 @@ class GameViewState extends State<GameView>{
             borderRadius: BorderRadius.circular(5)
           )
         ), 
-        child: const Text("New Game"),),
+        child: Text(AppLocalizations.of(context)!.new_game),),
         //reset history
         ElevatedButton(onPressed: ()=>{
           resetHistory()
@@ -65,7 +66,7 @@ class GameViewState extends State<GameView>{
           foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))
         ), 
-        child: const Text("Reset history"),)
+        child: Text(AppLocalizations.of(context)!.reset_history),)
       ],
       ),
     );

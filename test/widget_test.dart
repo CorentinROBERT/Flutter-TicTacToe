@@ -9,6 +9,7 @@
 // more information about Widget testing.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -16,6 +17,8 @@ void main() {
     testWidgets('should display a string of text', (WidgetTester tester) async {
       // Define a Widget
       const myWidget = MaterialApp(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
         home: Scaffold(
           body: Text('Hello'),
         ),

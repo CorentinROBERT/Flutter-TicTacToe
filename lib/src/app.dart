@@ -46,8 +46,39 @@ class MyApp extends StatelessWidget {
       // Define a light and dark color theme. Then, read the user's
       // preferred ThemeMode (light, dark, or system default) from the
       // SettingsController to display the correct theme.
-      theme: ThemeData(),
-      darkTheme: ThemeData.dark(),
+      theme: ThemeData(
+       useMaterial3: true,
+
+        // Define the default brightness and colors.
+        colorScheme: ColorScheme.fromSeed(
+          surface: Colors.white,
+          seedColor: Colors.purple,
+          // TRY THIS: Change to "Brightness.light"
+          //           and see that all colors change
+          //           to better contrast a light background.
+          brightness: Brightness.dark,
+        ),
+
+        // Define the default `TextTheme`. Use this to specify the default
+        // text styling for headlines, titles, bodies of text, and more.
+        textTheme: const TextTheme(
+          displayLarge: TextStyle(
+            fontSize: 72,
+            fontWeight: FontWeight.bold,
+          ),
+          titleLarge: TextStyle(
+            fontSize: 30,
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.bold
+          ),
+          bodyMedium: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold
+          ),
+          displaySmall: TextStyle(),
+        ),
+      ),
+      darkTheme: ThemeData.light(),
 
       // Define a function to handle named routes in order to support
       // Flutter web url navigation and deep linking.

@@ -2,5 +2,12 @@
   "appTitle": "mobile_app_interview",
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "tictactoe": "Tic Tac Toe",
+  "player1" : "Player1",
+  "player2" : "Player2",
+  "new_game" : "New Game",
+  "reset_history" : "Reset History",
+  "no_winner_on_this_game": "No winner on this game",
+  "your_turn": "Your turn"
 }
