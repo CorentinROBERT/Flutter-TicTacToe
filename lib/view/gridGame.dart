@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mobile_app_interview/controller/gameController.dart';
 import 'package:mobile_app_interview/controller/game_bloc.dart';
 import 'package:mobile_app_interview/controller/game_event.dart';
 import '../controller/game_state.dart';

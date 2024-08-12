@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app_interview/controller/gameController.dart';
 import 'package:mobile_app_interview/controller/game_state.dart';
 import 'package:mobile_app_interview/model/player.dart';
 
