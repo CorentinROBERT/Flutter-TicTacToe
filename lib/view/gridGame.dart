@@ -20,18 +20,6 @@ class GridGameState extends State<GridGame>{
   //TODO to improve with generate grid method like listbuilder
   //TODO create a cell component
 
-  bool? case00;
-  bool? case01;
-  bool? case02;
-
-  bool? case10;
-  bool? case11;
-  bool? case12;
-
-  bool? case20;
-  bool? case21;
-  bool? case22;
-
   @override
   void initState() {
     super.initState();
@@ -53,9 +41,9 @@ class GridGameState extends State<GridGame>{
             children: [
               GestureDetector(onTap: () {
                 print("case00");
-                if(case00!=null || widget.state.state != GameStateStatus.play) return;
+                if(widget.state.case00!=null || widget.state.state != GameStateStatus.play) return;
                 setState(() {
-                  case00 = widget.state.currentPlayer.isPlayer1;
+                  widget.state.case00 = widget.state.currentPlayer.isPlayer1;
                   checkIfWin();
                   context.read<GameBloc>().add(SwitchPlayerEvent());
                 });
@@ -64,13 +52,13 @@ class GridGameState extends State<GridGame>{
                 height: size.height/7,
                 width: size.height/7,
                 color: Colors.white,
-                child: case00!=null ? (case00! ? widget.state.player1.icon : widget.state.player2.icon) : null)
+                child: widget.state.case00!=null ? (widget.state.case00! ? widget.state.player1.icon : widget.state.player2.icon) : null)
               ),
               GestureDetector(onTap: () {
                 print("case01");
-                if(case01!=null || widget.state.state != GameStateStatus.play) return;
+                if(widget.state.case01!=null || widget.state.state != GameStateStatus.play) return;
                 setState(() {
-                  case01 = widget.state.currentPlayer.isPlayer1;
+                  widget.state.case01 = widget.state.currentPlayer.isPlayer1;
                   checkIfWin();
                   context.read<GameBloc>().add(SwitchPlayerEvent());
                 });
@@ -79,13 +67,13 @@ class GridGameState extends State<GridGame>{
                 height: size.height/7,
                 width: size.height/7,
                 color: Colors.white,
-                child: case01!=null ? (case01! ? widget.state.player1.icon: widget.state.player2.icon) : null)
+                child: widget.state.case01!=null ? (widget.state.case01! ? widget.state.player1.icon: widget.state.player2.icon) : null)
               ),
               GestureDetector(onTap: () {
                 print("case02");
-                if(case02!=null || widget.state.state != GameStateStatus.play) return;
+                if(widget.state.case02!=null || widget.state.state != GameStateStatus.play) return;
                 setState(() {
-                  case02 = widget.state.currentPlayer.isPlayer1;
+                  widget.state.case02 = widget.state.currentPlayer.isPlayer1;
                   checkIfWin();
                   context.read<GameBloc>().add(SwitchPlayerEvent());
                 });
@@ -94,7 +82,7 @@ class GridGameState extends State<GridGame>{
                 height: size.height/7,
                 width: size.height/7,
                 color: Colors.white,
-                child: case02!=null ? (case02! ? widget.state.player1.icon: widget.state.player2.icon) : null)
+                child: widget.state.case02!=null ? (widget.state.case02! ? widget.state.player1.icon: widget.state.player2.icon) : null)
               )
             ],
       
@@ -109,9 +97,9 @@ class GridGameState extends State<GridGame>{
               children: [
                 GestureDetector(onTap: () {
                   print("case10");
-                  if(case10!=null || widget.state.state != GameStateStatus.play) return;
+                  if(widget.state.case10!=null || widget.state.state != GameStateStatus.play) return;
                 setState(() {
-                  case10 = widget.state.currentPlayer.isPlayer1;
+                  widget.state.case10 = widget.state.currentPlayer.isPlayer1;
                   checkIfWin();
                    context.read<GameBloc>().add(SwitchPlayerEvent());
                 });
@@ -120,13 +108,13 @@ class GridGameState extends State<GridGame>{
                   height: size.height/7,
                   width: size.height/7,
                   color: Colors.white,
-                child: case10!=null ? (case10! ? widget.state.player1.icon: widget.state.player2.icon) : null)
+                child: widget.state.case10!=null ? (widget.state.case10! ? widget.state.player1.icon: widget.state.player2.icon) : null)
                 ),
                 GestureDetector(onTap: () {
                   print("case11");
-                  if(case11!=null || widget.state.state != GameStateStatus.play) return;
+                  if(widget.state.case11!=null || widget.state.state != GameStateStatus.play) return;
                 setState(() {
-                  case11 = widget.state.currentPlayer.isPlayer1;
+                  widget.state.case11 = widget.state.currentPlayer.isPlayer1;
                   checkIfWin();
                    context.read<GameBloc>().add(SwitchPlayerEvent());
                 });
@@ -135,13 +123,13 @@ class GridGameState extends State<GridGame>{
                   height: size.height/7,
                   width: size.height/7,
                   color: Colors.white,
-                child: case11!=null ? (case11! ? widget.state.player1.icon: widget.state.player2.icon) : null)
+                child: widget.state.case11!=null ? (widget.state.case11! ? widget.state.player1.icon: widget.state.player2.icon) : null)
                 ),
                 GestureDetector(onTap: () {
                   print("case12");
-                  if(case12!=null || widget.state.state != GameStateStatus.play) return;
+                  if(widget.state.case12!=null || widget.state.state != GameStateStatus.play) return;
                 setState(() {
-                  case12 = widget.state.currentPlayer.isPlayer1;
+                  widget.state.case12 = widget.state.currentPlayer.isPlayer1;
                   checkIfWin();
                    context.read<GameBloc>().add(SwitchPlayerEvent());
                 });
@@ -150,7 +138,7 @@ class GridGameState extends State<GridGame>{
                   height: size.height/7,
                   width: size.height/7,
                   color: Colors.white,
-                child: case12!=null ? (case12! ? widget.state.player1.icon: widget.state.player2.icon) : null)
+                child: widget.state.case12!=null ? (widget.state.case12! ? widget.state.player1.icon: widget.state.player2.icon) : null)
                 )
               ],
                 
@@ -163,9 +151,9 @@ class GridGameState extends State<GridGame>{
             children: [
               GestureDetector(onTap: () {
                 print("case20");
-                  if(case20!=null || widget.state.state != GameStateStatus.play) return;
+                  if(widget.state.case20!=null || widget.state.state != GameStateStatus.play) return;
                 setState(() {
-                  case20 = widget.state.currentPlayer.isPlayer1;
+                  widget.state.case20 = widget.state.currentPlayer.isPlayer1;
                   checkIfWin();
                   context.read<GameBloc>().add(SwitchPlayerEvent());
                 });
@@ -174,13 +162,13 @@ class GridGameState extends State<GridGame>{
                 height: size.height/7,
                 width: size.height/7,
                 color: Colors.white,
-                child: case20!=null ? (case20! ? widget.state.player1.icon: widget.state.player2.icon) : null)
+                child: widget.state.case20!=null ? (widget.state.case20! ? widget.state.player1.icon: widget.state.player2.icon) : null)
               ),
               GestureDetector(onTap: () {
                 print("case21");
-                  if(case21!=null || widget.state.state != GameStateStatus.play) return;
+                  if(widget.state.case21!=null || widget.state.state != GameStateStatus.play) return;
                 setState(() {
-                  case21 = widget.state.currentPlayer.isPlayer1;
+                  widget.state.case21 = widget.state.currentPlayer.isPlayer1;
                   checkIfWin();
                   context.read<GameBloc>().add(SwitchPlayerEvent());
                 });
@@ -189,13 +177,13 @@ class GridGameState extends State<GridGame>{
                 height: size.height/7,
                 width: size.height/7,
                 color: Colors.white,
-                child: case21!=null ? (case21! ? widget.state.player1.icon: widget.state.player2.icon) : null)
+                child: widget.state.case21!=null ? (widget.state.case21! ? widget.state.player1.icon: widget.state.player2.icon) : null)
               ),
               GestureDetector(onTap: () {
                 print("case22");
-                  if(case22!=null || widget.state.state != GameStateStatus.play) return;
+                  if(widget.state.case22!=null || widget.state.state != GameStateStatus.play) return;
                 setState(() {
-                  case22 = widget.state.currentPlayer.isPlayer1;
+                  widget.state.case22 = widget.state.currentPlayer.isPlayer1;
                   checkIfWin();
                   context.read<GameBloc>().add(SwitchPlayerEvent());
                 });
@@ -204,7 +192,7 @@ class GridGameState extends State<GridGame>{
                 height: size.height/7,
                 width: size.height/7,
                 color: Colors.white,
-                child: case22!=null ? (case22! ? widget.state.player1.icon: widget.state.player2.icon) : null)
+                child: widget.state.case22!=null ? (widget.state.case22! ? widget.state.player1.icon: widget.state.player2.icon) : null)
               )
             ],
       
@@ -219,9 +207,9 @@ class GridGameState extends State<GridGame>{
     //TODO make function to set winner to avoid copy code
 
     List<List<bool?>> board = [
-      [case00, case01, case02],
-      [case10, case11, case12],
-      [case20, case21, case22]
+      [widget.state.case00, widget.state.case01, widget.state.case02],
+      [widget.state.case10, widget.state.case11, widget.state.case12],
+      [widget.state.case20, widget.state.case21, widget.state.case22]
     ];
     // Check horizontal lines
     for (int row = 0; row < 3; row++) {
@@ -258,15 +246,15 @@ class GridGameState extends State<GridGame>{
 
   reset()
   {
-    case00 = null;
-    case01 = null;
-    case02 = null;
-    case10 = null;
-    case11 = null;
-    case12 = null;
-    case20 = null;
-    case21 = null;
-    case22 = null;
+    widget.state.case00 = null;
+    widget.state.case01 = null;
+    widget.state.case02 = null;
+    widget.state.case10 = null;
+    widget.state.case11 = null;
+    widget.state.case12 = null;
+    widget.state.case20 = null;
+    widget.state.case21 = null;
+    widget.state.case22 = null;
   }
   
   void defineWinner(bool value) {

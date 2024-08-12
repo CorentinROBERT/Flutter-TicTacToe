@@ -16,26 +16,18 @@ class GameView extends StatefulWidget{
 
 class GameViewState extends State<GameView>{
 
-  //GameController controller = GameController();
    GlobalKey<GridGameState> gridGameKey = GlobalKey();
 
   @override
   void initState() {
-    //controller.initGame();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //title 
-      //TODO
-      //need to create style for title
-      //need to use translate for title
-      //need to create widget for title
       appBar: AppBar(title: Text(
         AppLocalizations.of(context)!.tictactoe,
-        //"Tic Tac Toe",
         style: TextStyle(color: Colors.white)
         ,),
         centerTitle: true,
