@@ -9,5 +9,12 @@
   "new_game" : "New Game",
   "reset_history" : "Reset History",
   "no_winner_on_this_game": "No winner on this game",
-  "your_turn": "Your turn"
+  "your_turn": "Your turn",
+  "winner":"Congratulation {player} you win!",
+  "@winner":{
+    "player":{
+      "type":"String",
+      "example":"player1"
+    }
+  }
 }

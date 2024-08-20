@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:equatable/equatable.dart';
 import 'package:mobile_app_interview/model/player.dart';
 
@@ -117,7 +116,8 @@ class GameState extends Equatable {
   static GameState fromJson(Map<String, dynamic> json) {
     final player1 = Player.fromJson(json['player1']);
     final player2 = Player.fromJson(json['player2']);
-    final currentPlayer = json['currentPlayer'] == player1.name ? player1 : player2;
+    final currentPlayer =
+        json['currentPlayer'] == player1.name ? player1 : player2;
     final case00 = json['case00'];
     final case01 = json['case01'];
     final case02 = json['case02'];
@@ -131,7 +131,8 @@ class GameState extends Equatable {
     return GameState(
       numberMovePlay: json['numberMovePlay'] as int,
       currentPlayer: currentPlayer,
-      state: GameStateStatus.values.firstWhere((e) => e.toString() == json['state']),
+      state: GameStateStatus.values
+          .firstWhere((e) => e.toString() == json['state']),
       lastWinner: json['lastWinner'] == null
           ? null
           : (json['lastWinner'] == player1.name ? player1 : player2),
