@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_app_interview/controller/game_bloc.dart';
 import 'package:mobile_app_interview/controller/game_event.dart';
@@ -23,6 +24,9 @@ class GridGameState extends State<GridGame> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
+      width: MediaQuery.of(context).orientation == Orientation.landscape
+          ? size.width / 4
+          : null,
       color: Colors.grey,
       child: Padding(
         padding: const EdgeInsets.all(10),
